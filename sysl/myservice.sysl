@@ -1,0 +1,9 @@
+
+import manual/service.sysl
+import generated/index.sysl
+
+
+myservice[appfmt="%(appname)", ~ignore]:
+    _[~ignore]:
+        Bar
+        Foo

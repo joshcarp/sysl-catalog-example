@@ -1,0 +1,6 @@
+Bar:
+    MyMethod:
+        Foo <- SecondMethod
+        if response not valid:
+            loop until valid response or timeout:
+                Foo <- FailedMethod

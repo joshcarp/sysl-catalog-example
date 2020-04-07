@@ -1,0 +1,30 @@
+
+Bar:
+    @package="commypackagename"
+    MyMethod(input <: commypackagename.BarRequest):
+        return ok <: commypackagename.BarResponse
+
+Foo:
+    @package="commypackagename2"
+    FailedMethod(input <: commypackagename2.FooRequest):
+        return ok <: commypackagename2.FooResponse
+    SecondMethod(input <: commypackagename2.FooRequest):
+        return ok <: commypackagename2.FooResponse
+
+commypackagename:
+    @package="commypackagename"
+    !type BarRequest:
+        content <: string
+    !type BarResponse:
+        balance <: commypackagename.Money
+        content <: string
+    !type Money:
+        nanos <: int
+        units <: int
+
+commypackagename2:
+    @package="commypackagename2"
+    !type FooRequest:
+        content <: string
+    !type FooResponse:
+        content <: string

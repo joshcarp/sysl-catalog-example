@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package com.mypackagename;
+
+service Bar{
+    rpc MyMethod(BarRequest) returns(BarResponse);
+}
+
+message BarRequest{
+    string content = 1;
+};
+
+message BarResponse{
+    string content = 1;
+    Money balance = 2;
+};
+
+message Money{
+    int64 units = 1;
+    int32 nanos = 2 ;
+};

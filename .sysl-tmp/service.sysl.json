@@ -1,0 +1,66 @@
+{
+ "apps": {
+  "Bar": {
+   "name": {
+    "part": [
+     "Bar"
+    ]
+   },
+   "endpoints": {
+    "MyMethod": {
+     "name": "MyMethod",
+     "stmt": [
+      {
+       "call": {
+        "target": {
+         "part": [
+          "Foo"
+         ]
+        },
+        "endpoint": "SecondMethod"
+       }
+      },
+      {
+       "cond": {
+        "test": "response not valid",
+        "stmt": [
+         {
+          "group": {
+           "title": "loop until valid response or timeout",
+           "stmt": [
+            {
+             "call": {
+              "target": {
+               "part": [
+                "Foo"
+               ]
+              },
+              "endpoint": "FailedMethod"
+             }
+            }
+           ]
+          }
+         }
+        ]
+       }
+      }
+     ],
+     "sourceContext": {
+      "file": "/sysl/manual/service.sysl",
+      "start": {
+       "line": 2,
+       "col": 4
+      }
+     }
+    }
+   },
+   "sourceContext": {
+    "file": "/sysl/manual/service.sysl",
+    "start": {
+     "line": 1,
+     "col": 1
+    }
+   }
+  }
+ }
+}

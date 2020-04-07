@@ -1,0 +1,17 @@
+
+syntax = "proto3";
+
+package com.mypackagename2;
+
+service Foo{
+    rpc SecondMethod(FooRequest) returns(FooResponse);
+    rpc FailedMethod(FooRequest) returns(FooResponse);
+}
+
+message FooRequest{
+    string content = 1;
+};
+
+message FooResponse{
+    string content = 1;
+};
